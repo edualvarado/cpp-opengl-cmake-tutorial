@@ -21,6 +21,7 @@ The code contains two main parts:
 <br>
 
 <a name="Initial Setup"></a>
+
 ## Initial Setup
 
 For this short tutorial, we will be using **Windows 10** (x64), although other OS are perfectly compatible as well (in that case, please refer to other tutorials).
@@ -33,6 +34,8 @@ Second, we will be using Windows and MS Visual Studio as IDE and C++ compiler (a
 
 Refer to the [Official Documentation of MS Visual Studio](https://docs.microsoft.com/en-us/cpp/build/vscpp-step-0-installation) for further details.
 
+<br>
+
 <a name="Generate a VS project using CMake"></a>
 
 ## Generate a VS project using CMake
@@ -40,6 +43,8 @@ Refer to the [Official Documentation of MS Visual Studio](https://docs.microsoft
 First, we need to use CMake to build our project. To do so, all `CMakeList.txt` files must be already written and included in the root directory, in addition to all those dependencies (such as CMake is able to link all the necessary libraries). In the provided code,  the `CMakeList.txt` files are already provided.
 
 In order to build the project, it is commonly done in two different ways:
+
+<br>
 
 <a name="Using the GUI"></a>
 
@@ -54,6 +59,8 @@ After that, you will need to configure the generator to build a solution for you
 Finally, click on **Generate**. On the log window, you can check the process status. After the process is completed, inside the `build/` directory you will fine all the required Visual Studio files along with the solution project `your_project.sln`.
 
 Once the project is built, you will not have to do it again. Only if you modify your CMake, you should build it again to avoid any possible errors.
+
+<br>
 
 <a name="VS Configuration"></a>
 
