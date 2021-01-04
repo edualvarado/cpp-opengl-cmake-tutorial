@@ -1,11 +1,11 @@
 # C++/OpenGL Project Building Tutorial with CMake (Windows)
 
 - [Introduction](#Introduction)
-- [Initial Setup](#Initial Setup)
-- [Generate a VS project using CMake](#Generate a VS project using CMake)
-  - [Using the GUI](#Using the GUI)
-- [VS Configuration](#VS Configuration)
-- [Running the executable](#Running the executable)
+- [Initial Setup](#InitialSetup)
+- [Generate a VS project using CMake](#VSCMake)
+  - [Using the GUI](#GUI)
+- [VS Configuration](#VSConfiguration)
+- [Running the executable](#Executable)
 
 <a name="Introduction"></a>
 
@@ -18,9 +18,7 @@ The code contains two main parts:
 * `library/vcl/` - It contains the 3D graphics library.
 * `src/main.cpp` - The one C++ file containing our source code, which will be deployed afterwards into an standalone executable.
 
-<br>
-
-<a name="Initial Setup"></a>
+<a name="InitialSetup"></a>
 
 ## Initial Setup
 
@@ -34,19 +32,15 @@ Second, we will be using Windows and MS Visual Studio as IDE and C++ compiler (a
 
 Refer to the [Official Documentation of MS Visual Studio](https://docs.microsoft.com/en-us/cpp/build/vscpp-step-0-installation) for further details.
 
-<br>
-
-<a name="Generate a VS project using CMake"></a>
+<a name="#VSCMake"></a>
 
 ## Generate a VS project using CMake
 
-First, we need to use CMake to build our project. To do so, all `CMakeList.txt` files must be already written and included in the root directory, in addition to all those dependencies (such as CMake is able to link all the necessary libraries). In the provided code,  the `CMakeList.txt` files are already provided.
+First, we need to use CMake to build our project. To do so, all `CMakeList.txt` files must be already written and included in the root directory, in addition to all those dependencies (such as CMake is able to link all the necessary libraries). In the code,  the `CMakeList.txt` files are already provided.
 
-In order to build the project, it is commonly done in two different ways:
+In order to build the project, we can use the GUI from CMake:
 
-<br>
-
-<a name="Using the GUI"></a>
+<a name="GUI"></a>
 
 ### Using the GUI
 
@@ -54,15 +48,13 @@ To start CMake, open the executable `CMake (cmake-gui)`. There are two options t
 * `Where is the source code`: Add the root directory of your project. It must contain the main `CMakeList.txt` file.
 * `Where to build the binaries`: Directory where you will store the built project. Normally it should be on `root_directory/build` (if you do not have a `build/` folder, you can create one).
 
-After that, you will need to configure the generator to build a solution for your specific version of Visual Studio, under the option **Configure**.
+After that, you will need to configure the generator to build a solution for your specific version of Visual Studio, under the option **Configure** (normally set up correctly by default).
 
 Finally, click on **Generate**. On the log window, you can check the process status. After the process is completed, inside the `build/` directory you will fine all the required Visual Studio files along with the solution project `your_project.sln`.
 
 Once the project is built, you will not have to do it again. Only if you modify your CMake, you should build it again to avoid any possible errors.
 
-<br>
-
-<a name="VS Configuration"></a>
+<a name="VSConfiguration"></a>
 
 ## VS Configuration
 
@@ -74,9 +66,7 @@ Also, change the build type from `Debug` to `RelWithDebInfo`, in order to build 
 
 Finally, on the option **Local Windows Debugger**, select the properties `your_project Debug Properties`. There, you can modify several options when building, such as the location of the `.exe` file with the option **Output Directory** (I tend to place it on the root directory normally, and not in the `build/` folder). Then, change the **Working Directory** in the **Debugging** property, from `$(ProjectDir)` to `$(TargetDir)`.
 
-
-
-<a name="Running the executable"></a>
+<a name="Executable"></a>
 
 ## Running the executable
 
